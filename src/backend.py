@@ -42,7 +42,7 @@ if not GROQ_API_KEY:
 # LLM
 # =======================================
 llm = ChatGroq(
-    model = "llama-3.3-70b-versatile",
+    model = "openai/gpt-oss-20b",
     api_key=GROQ_API_KEY
 )
 
@@ -55,7 +55,7 @@ class TravelState(TypedDict):
     user_query: str 
     flight_results: str
     hotel_results: str
-    iernary: str
+    itinerary: str
     llm_calls = int
 
 # ==========================================
@@ -139,7 +139,7 @@ def final_agent(state: TravelState):
     {state['hotel_results']}
 
     Itinerary:
-    {state['itinerar']}
+    {state['itinerary']}
 
     Format the final answer beautifully using these sections:
 

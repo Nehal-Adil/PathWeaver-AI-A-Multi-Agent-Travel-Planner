@@ -13,19 +13,19 @@ from backend import run_travel_agent
 BASE_DIR = Path(__file__).resolve().parent
 
 app = FastAPI(
-    title="TripMate AI",
-    description="LangGraph Multi-Agent Travel Planner with FastAPI Frontend",
+    title="PathWeaver AI",
+    description="LangGraph Multi-Agent Travel Planner with FastAPI and Frontend",
     version="1.0.0"
 )
 
 app.mount(
     "/static",
-    StaticFiles(directory=str(BASE_DIR / "static")),
+    StaticFiles(directory=str("static")),
     name="static"
 )
 
 templates = Jinja2Templates(
-    directory=str(BASE_DIR / "templates")
+    directory=str("templates")
 )
 
 

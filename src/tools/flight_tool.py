@@ -107,6 +107,8 @@ CITY_MAIN_AIRPORT = {
 }
 
 def clean_text(text: str) -> str:
+    """Strips out punctuation, lowercases everything, and removes fluff words (like "ticket", "trip", "information")."""
+
     text = text.lower().strip()
     text = re.sub(r"[^a-z0-9\s]", " ", text)
     text = re.sub(r"\s+", " ", text)
@@ -120,6 +122,8 @@ def clean_text(text: str) -> str:
 
 
 def country_name_to_code(text: str):
+    """ Converts a full country name into its standard 2-letter ISO code using a library (pycountry) or country aliases."""
+
     text = clean_text(text)
 
     if text in COUNTRY_ALIASES:
@@ -196,8 +200,6 @@ def get_best_airport_for_country(country_code: str):
     return candidates[0][1]
 
 
-
-
 def resolve_location_to_iata(location: str):
     """
     Converts country/city/airport/IATA into IATA code.
@@ -265,8 +267,6 @@ def resolve_location_to_iata(location: str):
         return city_matches[0][1]
 
     return None
-
-
 
 
 def find_location_mentions(query: str):

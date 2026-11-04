@@ -8,11 +8,19 @@ from backend import run_travel_agent
 # res = search_flights("Plan a 7 days Japan trip from India.")
 # print(res)
 
-user_input = input("Enter travel request: ")
+# user_input = input("Enter travel request: ")
 
-response = run_travel_agent(
-    user_input=user_input,
-    thread_id="test_user"
-)
-print("\nFINAL RESPONSE: \n")
-print(response["answer"])
+# response = run_travel_agent(
+#     user_input=user_input,
+#     thread_id="test_user"
+# )
+# print("\nFINAL RESPONSE: \n")
+# print(response["answer"])
+
+
+import asyncio
+from mcp_client_test import tavily_mcp_search
+
+if __name__ == "__main__":
+    query = "Summarize the last test match between Australia and Proteas."
+    asyncio.run(tavily_mcp_search(query))

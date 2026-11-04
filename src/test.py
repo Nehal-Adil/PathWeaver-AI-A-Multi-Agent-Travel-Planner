@@ -1,5 +1,5 @@
 from tools.tavily_tool import tavily_search
-from tools.flight_tool import search_flights
+from tools.flight_search_tool import search_flights
 from backend import run_travel_agent
 
 # res = tavily_search("Best Japanese hotels in Bangalore")

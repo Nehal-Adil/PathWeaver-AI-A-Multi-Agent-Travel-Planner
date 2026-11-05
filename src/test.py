@@ -1,5 +1,6 @@
 from tools.tavily_tool import tavily_search
 from tools.flight_search_tool import search_flights
+from mcp_client import get_all_tools
 from backend import run_travel_agent
 
 # res = tavily_search("Best Japanese hotels in Bangalore")
@@ -21,6 +22,9 @@ from backend import run_travel_agent
 import asyncio
 from tools.mcp_search_client import tavily_mcp_search
 
+# if __name__ == "__main__":
+#     query = "Summarize the last test match between Australia and Proteas."
+#     asyncio.run(tavily_mcp_search(query))
+
 if __name__ == "__main__":
-    query = "Summarize the last test match between Australia and Proteas."
-    asyncio.run(tavily_mcp_search(query))
+    asyncio.run(get_all_tools())

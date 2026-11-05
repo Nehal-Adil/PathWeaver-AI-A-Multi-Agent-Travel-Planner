@@ -19,7 +19,7 @@ from langchain_core.messages import (
 
 from langchain_groq import ChatGroq
 # from tools.tavily_tool import tavily_search
-from mcp_client_test import tavily_mcp_search
+from tools.mcp_search_client import tavily_mcp_search
 from tools.flight_search_tool import search_flights
 
 def get_database_url():

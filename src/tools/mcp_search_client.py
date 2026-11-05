@@ -1,5 +1,4 @@
 import os
-import asyncio
 from dotenv import load_dotenv
 from langchain_mcp_adapters.client import MultiServerMCPClient
 
@@ -11,7 +10,10 @@ client = MultiServerMCPClient(
     {
         "tavily": {
             "transport": "streamable_http",
-            "url": f"https://mcp.tavily.com/mcp/?tavilyApiKey={TAVILY_API_KEY}"
+            "url": f"https://mcp.tavily.com/mcp/",
+            "headers": {
+                "Authorization": f"Bearer {TAVILY_API_KEY}"
+            }
         }
     }
 )

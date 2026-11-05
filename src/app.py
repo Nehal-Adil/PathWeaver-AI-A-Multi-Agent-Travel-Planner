@@ -1,3 +1,4 @@
+import os
 from pathlib import Path
 import traceback
 import uvicorn
@@ -16,22 +17,22 @@ nest_asyncio.apply()
 
 sniffio.current_async_library_cvar.set("asyncio")
 
-BASE_DIR = Path(__file__).resolve().parent
-
 app = FastAPI(
     title="PathWeaver AI",
     description="LangGraph Multi-Agent Travel Planner with FastAPI and Frontend",
     version="1.0.0"
 )
 
+BASE_DIR = Path(__file__).resolve().parent.parent
+
 app.mount(
     "/static",
-    StaticFiles(directory=str("static")),
+    StaticFiles(directory=os.path.join(BASE_DIR, "static")),
     name="static"
 )
 
 templates = Jinja2Templates(
-    directory=str("templates")
+    directory=os.path.join(BASE_DIR, "templates")
 )
 
 

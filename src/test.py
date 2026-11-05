@@ -19,7 +19,7 @@ from backend import run_travel_agent
 
 
 import asyncio
-from mcp_client_test import tavily_mcp_search
+from tools.mcp_search_client import tavily_mcp_search
 
 if __name__ == "__main__":
     query = "Summarize the last test match between Australia and Proteas."
